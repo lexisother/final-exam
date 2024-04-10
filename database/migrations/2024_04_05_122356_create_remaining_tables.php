@@ -50,7 +50,7 @@ return new class extends Migration
 
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_info_id')->nullable()->constrained();
+            $table->foreignId('student_info_id')->nullable()->constrained('users');
             $table->foreignId('instructor_info_id')->nullable()->constrained();
             $table->foreignId('car_id')->constrained();
             $table->date('date');

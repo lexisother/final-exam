@@ -52,4 +52,12 @@ class User extends Authenticatable
             throw new \Error("User is not a student!");
         }
     }
+
+    public function lessons(): HasMany {
+        if ($this->role === "Leerling") {
+            return $this->hasMany(Lesson::class);
+        } else {
+            throw new \Error("User is not a student!");
+        }
+    }
 }

@@ -24,7 +24,7 @@
           <tr>
             <td>{{ $lesson->date }}</td>
             <td>{{ $lesson->start_time }}</td>
-            <td>TBD</td>
+            <td>{{ $lesson->student->name }}</td>
             <td>{{ $lesson->car->name }}</td>
           </tr>
         @endforeach

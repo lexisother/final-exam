@@ -25,4 +25,8 @@ class Lesson extends Model
     public function car(): BelongsTo {
         return $this->belongsTo(Car::class);
     }
+
+    public function student(): BelongsTo {
+        return $this->belongsTo(User::class, 'student_info_id');
+    }
 }
