@@ -1,12 +1,3 @@
-@php
-  use App\Models\{Lesson, Stripcard};
-
-  $lessons = Lesson::all()->sortBy([
-    ['date', 'asc'],
-    ['start_time', 'asc']
-  ]);
-@endphp
-
 <x-app-layout>
   <div class="py-12">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -47,7 +38,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach (Stripcard::all() as $card)
+        @foreach ($cards as $card)
           <tr>
             <td class="border border-slate-700">{{ $card->user->name }}</td>
             <td class="border border-slate-700">{{ $card->remaining_lessons }}</td>

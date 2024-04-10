@@ -1,18 +1,3 @@
-@php
-  use App\Models\Lesson;
-  use Carbon\Carbon;
-
-  $lessons = Lesson::all()
-    ->sortBy([
-      ['date', 'asc'],
-      ['start_time', 'asc']
-    ])
-    ->filter(function (Lesson $l) {
-      $date = Carbon::createFromFormat('Y-m-d H:i:s', "$l->date $l->end_time");
-      return $date->isPast();
-    });
-@endphp
-
 <x-app-layout>
   <table class="bg-yellow-200 border-collapse border border-slate-500">
     <thead>

@@ -1,9 +1,3 @@
-@php
-    use App\Models\Lesson;
-
-    $lesson = Lesson::find($id);
-@endphp
-
 <x-app-layout>
   <form class="flex flex-col gap-4" action="/api/lessons/edit/{{ $id }}" method="post">
     @csrf

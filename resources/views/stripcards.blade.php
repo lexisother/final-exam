@@ -1,7 +1,3 @@
-@php
-  use App\Models\{User, Stripcard};
-@endphp
-
 <x-app-layout>
   <div id="create" class="p-4 bg-green-400 rounded-md w-min mb-4">
     <div class="mdi mdi-plus"></div>
@@ -9,7 +5,7 @@
   <form id="form" action="/api/cards/create" method="post" hidden>
     @csrf
     <select name="student">
-      @foreach(User::all()->filter(fn (User $u) => $u->role === "Leerling") as $student)
+      @foreach($students as $student)
         <option name="user" value="{{ $student->id }}">{{ $student->name }}</option>
       @endforeach
     </select>
@@ -30,7 +26,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach(Stripcard::all() as $card)
+    @foreach($cards as $card)
       <tr>
         <td class="border border-slate-700">{{ $card->user->name }}</td>
         <td class="border border-slate-700">{{ $card->remaining_lessons }}</td>
