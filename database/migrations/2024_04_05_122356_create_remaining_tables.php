@@ -43,7 +43,7 @@ return new class extends Migration
 
         Schema::create('strip_cards', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_info_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->integer('remaining_lessons');
             $table->timestamps();
         });
