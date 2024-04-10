@@ -61,6 +61,7 @@ return new class extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->string('notes')->nullable();
+            $table->tinyInteger('finalized')->default(false);
             $table->timestamps();
         });
     }
