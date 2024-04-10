@@ -18,7 +18,8 @@ class Stripcard extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'remaining_lessons'
+        'remaining_lessons',
+        'level'
     ];
 
     public function user(): BelongsTo {
