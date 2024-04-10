@@ -1,4 +1,3 @@
-@php use App\Models\User; @endphp
 <x-app-layout>
   <x-slot name="nav">
     <x-navlink to="/" icon="home">Home</x-navlink>
@@ -18,7 +17,7 @@
     <div class="mx-16">
       <h2 class="text-2xl my-4">Instructeurs</h2>
       <div class="flex flex-row">
-        @foreach(User::all()->filter(fn (User $u) => $u->role === "Instructeur") as $instructor)
+        @foreach ($instructors as $instructor)
           <div>
             <img src="/img/{{ $instructor->info->image }}" />
             <p class="relative pl-2 left-1/2 transform -translate-x-1/2 -translate-y-full bg-gray-500">{{ $instructor->name }}</p>
