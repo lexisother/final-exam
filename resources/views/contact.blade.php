@@ -2,6 +2,7 @@
   <x-slot name="nav">
     <x-navlink to="/" icon="home">Home</x-navlink>
     <x-navlink to="/contact" icon="phone">Contact</x-navlink>
+    <x-navlink to="/login" icon="login">Login</x-navlink>
   </x-slot>
 
   <div id="notice" class="absolute left-1/2 p-4 border border-green-500 rounded-xl bg-green-400" hidden>

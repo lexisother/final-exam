@@ -18,7 +18,7 @@
       <option name="b">B</option>
       <option name="c">C</option>
     </select>
-    <input type="submit" value="Aanmaken">
+    <input class="border border-gray-400 p-2" type="submit" value="Aanmaken" />
   </form>
 
   <table class="bg-yellow-200 border-collapse border border-slate-500">
