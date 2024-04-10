@@ -12,6 +12,15 @@ class Stripcard extends Model
 
     protected $table = "strip_cards";
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'remaining_lessons'
+    ];
+
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
