@@ -39,6 +39,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('time_block_id')->nullable()->constrained();
+            $table->string('image');
+            $table->tinyInteger('archived');
             $table->timestamps();
         });
 

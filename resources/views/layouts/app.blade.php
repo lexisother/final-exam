@@ -58,10 +58,14 @@
     <x-sidebar>
       <img src="/logo.png" width="150" style="margin: auto" />
       <hr class="border-t-gray-500" />
-      <x-navlink to="/dashboard" icon="view-dashboard">Dashboard</x-navlink>
-      <x-navlink to="/dashboard/strippenkaarten" icon="ticket">Strippenkaart</x-navlink>
-      <x-navlink to="/dashboard/verslagen" icon="clipboard-edit">Verslagen</x-navlink>
-      <x-navlink to="/dashboard/leerlingen" icon="account-multiple">Leerlingen</x-navlink>
+      @if (isset($nav))
+        {{ $nav }}
+      @else
+        <x-navlink to="/dashboard" icon="view-dashboard">Dashboard</x-navlink>
+        <x-navlink to="/dashboard/strippenkaarten" icon="ticket">Strippenkaart</x-navlink>
+        <x-navlink to="/dashboard/verslagen" icon="clipboard-edit">Verslagen</x-navlink>
+        <x-navlink to="/dashboard/leerlingen" icon="account-multiple">Leerlingen</x-navlink>
+      @endif
     </x-sidebar>
 
     <div id="container" class="h-full p-4 sm:ml-64">
