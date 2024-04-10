@@ -1,0 +1,8 @@
+public/storage
+
+*.php
+!*.blade.php
+*.png
+*.sqlite
+*.ico
+*.txt
