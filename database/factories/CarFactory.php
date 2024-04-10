@@ -19,7 +19,8 @@ class CarFactory extends Factory
         return [
             'name' => fake()->vehicle,
             'image' => '',
-            'times_used' => 0
+            'times_used' => 0,
+            'archived' => false
         ];
     }
 }
