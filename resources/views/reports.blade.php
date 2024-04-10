@@ -32,7 +32,7 @@
         <td class="border border-slate-700">{{ $lesson->start_time }}</td>
         <td class="border border-slate-700">{{ $lesson->student->name }}</td>
         <td class="border border-slate-700 text-2xl">
-          <a href="/dashboard/reports/{{ $lesson->id }}" class="mdi mdi-notebook-edit"></a>
+          <a href="/dashboard/verslagen/{{ $lesson->id }}" class="mdi mdi-notebook-edit"></a>
         </td>
       </tr>
     @endforeach
