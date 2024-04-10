@@ -48,17 +48,10 @@
       </thead>
       <tbody>
         @foreach (Stripcard::all() as $card)
-          @php
-            $student = $card
-              ->user()
-              ->get()
-              ->first();
-          @endphp
-
           <tr>
-            <td class="border border-slate-700">{{ $student->name }}</td>
+            <td class="border border-slate-700">{{ $card->user->name }}</td>
             <td class="border border-slate-700">{{ $card->remaining_lessons }}</td>
-            <td class="border border-slate-700">TBD</td>
+            <td class="border border-slate-700">{{ $card->level }}</td>
           </tr>
         @endforeach
       </tbody>

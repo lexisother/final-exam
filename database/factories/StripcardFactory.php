@@ -16,8 +16,16 @@ class StripcardFactory extends Factory
      */
     public function definition(): array
     {
+        $level = fake()->randomElement(['A', 'B', 'C']);
+        $lessons = match($level) {
+            'A' => 5,
+            'B' => 10,
+            'C' => 20
+        };
+
         return [
-            'remaining_lessons' => fake()->numberBetween(1, 20)
+            'remaining_lessons' => $lessons,
+            'level' => $level
         ];
     }
 }

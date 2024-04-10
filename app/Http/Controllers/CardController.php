@@ -18,7 +18,8 @@ class CardController extends Controller
         };
 
         $user->stripcards()->create([
-            'remaining_lessons' => $lessons
+            'remaining_lessons' => $lessons,
+            'level' => $request->get('card')
         ]);
 
         return redirect('/dashboard/strippenkaarten');
