@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Lesson extends Model
@@ -22,7 +24,7 @@ class Lesson extends Model
         'date'
     ];
 
-    public function car(): HasOne {
-        return $this->hasOne(Car::class);
+    public function car(): BelongsTo {
+        return $this->belongsTo(Car::class);
     }
 }

@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Car extends Model
 {
@@ -21,7 +23,7 @@ class Car extends Model
         'times_used'
     ];
 
-    public function lessons(): BelongsToMany {
-        return $this->belongsToMany(Lesson::class);
+    public function lessons(): HasMany {
+        return $this->hasMany(Lesson::class);
     }
 }
