@@ -7,9 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::prefix('dashboard')->group(function() {
+    Route::get('/', fn () => view('dashboard'));
+    Route::get('/strippenkaarten', fn () => view('stripcards'));
+    Route::get('/verslagen', fn () => view('reports'));
+    Route::get('/leerlingen', fn () => view('students'));
+})->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
