@@ -34,7 +34,7 @@
       <tr>
         <td class="border border-slate-700">{{ $card->user->name }}</td>
         <td class="border border-slate-700">{{ $card->remaining_lessons }}</td>
-        <td class="border border-slate-700">
+        <td class="border border-slate-700 text-2xl">
           <a href="/api/cards/delete/{{ $card->id }}" class="mdi mdi-trash-can"></a>
         </td>
       </tr>
