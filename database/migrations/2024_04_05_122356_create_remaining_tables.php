@@ -37,7 +37,7 @@ return new class extends Migration
         Schema::create('instructor_infos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('time_block_id')->constrained();
+            $table->foreignId('time_block_id')->nullable()->constrained();
             $table->timestamps();
         });
 
@@ -50,13 +50,13 @@ return new class extends Migration
 
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_info_id')->constrained();
-            $table->foreignId('instructor_info_id')->constrained();
+            $table->foreignId('student_info_id')->nullable()->constrained();
+            $table->foreignId('instructor_info_id')->nullable()->constrained();
             $table->foreignId('car_id')->constrained();
+            $table->date('date');
             $table->time('start_time');
             $table->time('end_time');
             $table->string('notes');
-            $table->date('date');
             $table->timestamps();
         });
     }
