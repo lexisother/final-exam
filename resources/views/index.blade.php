@@ -1,7 +1,7 @@
 @php use App\Models\User; @endphp
 <x-app-layout>
   <x-slot name="nav">
-    <x-navlink to="/" icon="home">Dashboard</x-navlink>
+    <x-navlink to="/" icon="home">Home</x-navlink>
     <x-navlink to="/contact" icon="phone">Contact</x-navlink>
   </x-slot>
 
