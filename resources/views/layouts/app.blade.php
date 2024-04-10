@@ -43,7 +43,7 @@
     <title>Dashboard</title>
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.scss', 'resources/ts/app.ts'])
 </head>
 <body>
 <div class="-translate-x-full transform-none overflow-hidden"></div>
