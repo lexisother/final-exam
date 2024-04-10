@@ -1,4 +1,4 @@
-@props(['to', 'active'])
+@props(['to', 'icon', 'active'])
 
 @php
 $classes = ($active ?? false)
@@ -15,7 +15,7 @@ $classes = ($active ?? false)
     <a
         href="{{ $to }}"
         class="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-{{--        <Icon name={icon} height={24} width={24} />--}}
+        <div class="text-2xl mdi mdi-{{ $icon }}"></div>
         <span class="ms-3">
       {{ $slot }}
     </span>
