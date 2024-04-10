@@ -5,12 +5,15 @@
     <x-navlink to="/login" icon="login">Login</x-navlink>
   </x-slot>
 
-  <div id="notice" class="absolute left-1/2 p-4 border border-green-500 rounded-xl bg-green-400" hidden>
+  <div
+    id="notice"
+    class="absolute left-1/2 rounded-xl border border-green-500 bg-green-400 p-4"
+    hidden>
     <p class="text-center">Bericht verstuurd!</p>
   </div>
 
-  <div class="flex flex-row gap-6 items-center justify-center h-full">
-    <img src="/logo.png" class="w-1/5">
+  <div class="flex h-full flex-row items-center justify-center gap-6">
+    <img src="/logo.png" class="w-1/5" />
     <form class="flex flex-col gap-2">
       <h2 class="text-center">Contact opnemen?</h2>
       <div class="flex flex-col">

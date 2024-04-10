@@ -8,7 +8,7 @@
   </div>
 
   <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
-    <table class="bg-yellow-200 border-collapse border border-slate-500">
+    <table class="border-collapse border border-slate-500 bg-yellow-200">
       <thead>
         <tr>
           <th class="border border-slate-600">Datum</th>
@@ -29,7 +29,7 @@
       </tbody>
     </table>
 
-    <table class="bg-yellow-200 border-collapse border border-slate-500">
+    <table class="border-collapse border border-slate-500 bg-yellow-200">
       <thead>
         <tr>
           <th class="border border-slate-600">Leerling</th>
