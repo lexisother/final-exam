@@ -1,6 +1,10 @@
 @php
-  use App\Models\Lesson;
-  use App\Models\Stripcard;
+  use App\Models\{Lesson, Stripcard};
+
+  $lessons = Lesson::all()->sortBy([
+    ['date', 'asc'],
+    ['start_time', 'asc']
+  ]);
 @endphp
 
 <x-app-layout>
@@ -23,7 +27,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach (Lesson::all() as $lesson)
+        @foreach ($lessons as $lesson)
           <tr>
             <td class="border border-slate-700">{{ $lesson->date }}</td>
             <td class="border border-slate-700">{{ $lesson->start_time }}</td>
