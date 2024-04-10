@@ -5,9 +5,8 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', fn () => view('index'));
+Route::get('/contact', fn () => view('contact'));
 
 // TODO: USE CONTROLLERS AND MOVE LOGIC FROM BLADE TO RESPECTIVE CONTROLLER!!!
 Route::middleware(['auth', 'verified'])
