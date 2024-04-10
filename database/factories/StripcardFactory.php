@@ -17,7 +17,7 @@ class StripcardFactory extends Factory
     public function definition(): array
     {
         $level = fake()->randomElement(['A', 'B', 'C']);
-        $lessons = match($level) {
+        $lessons = match ($level) {
             'A' => 5,
             'B' => 10,
             'C' => 20
@@ -25,7 +25,7 @@ class StripcardFactory extends Factory
 
         return [
             'remaining_lessons' => $lessons,
-            'level' => $level
+            'level' => $level,
         ];
     }
 }

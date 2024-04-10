@@ -5,13 +5,10 @@ namespace App\Jobs;
 use App\Models\Lesson;
 use App\Models\Stripcard;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Storage;
 
 class CheckLesson implements ShouldQueue
 {
@@ -22,8 +19,7 @@ class CheckLesson implements ShouldQueue
      */
     public function __construct(
         public Lesson $lesson
-    )
-    {
+    ) {
         //
     }
 
@@ -37,7 +33,9 @@ class CheckLesson implements ShouldQueue
 
         // If the lesson we're checking is already taken care of, bail.
         $lesson = $this->lesson;
-        if ($lesson->finalized) return;
+        if ($lesson->finalized) {
+            return;
+        }
 
         // Let's fetch the student's stripcards, order them by creation date (so we're subtracting
         // from the oldest cards first), and then filter the list of obtained cards by checking if
@@ -57,7 +55,7 @@ class CheckLesson implements ShouldQueue
 
         // Now, take the first card from our set, subtract a lesson from the ones left, and save it.
         $card = $cards->first();
-        --$card->remaining_lessons;
+        $card->remaining_lessons--;
         $card->save();
 
         // Finally, mark the lesson as finalized and save it.

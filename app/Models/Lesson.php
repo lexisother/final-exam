@@ -19,14 +19,16 @@ class Lesson extends Model
         'start_time',
         'end_time',
         'notes',
-        'date'
+        'date',
     ];
 
-    public function car(): BelongsTo {
+    public function car(): BelongsTo
+    {
         return $this->belongsTo(Car::class);
     }
 
-    public function student(): BelongsTo {
+    public function student(): BelongsTo
+    {
         return $this->belongsTo(User::class, 'student_info_id');
     }
 }

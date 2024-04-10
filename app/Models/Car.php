@@ -18,10 +18,11 @@ class Car extends Model
     protected $fillable = [
         'name',
         'image',
-        'times_used'
+        'times_used',
     ];
 
-    public function lessons(): HasMany {
+    public function lessons(): HasMany
+    {
         return $this->hasMany(Lesson::class);
     }
 }

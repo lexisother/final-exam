@@ -16,7 +16,7 @@ class InstructorInfo extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'image'
+        'image',
     ];
 
     public function user(): BelongsTo

@@ -21,14 +21,14 @@ class DatabaseSeeder extends Seeder
             'car_id' => 8,
             'start_time' => '18:38:30',
             'end_time' => '19:38:30',
-            'date' => '2024-04-01'
+            'date' => '2024-04-01',
         ]);
 
         DB::table('instructor_infos')->insert([
             'user_id' => 2,
             'time_block_id' => 1,
             'archived' => 0,
-            'image' => 'jeroen.jpg'
+            'image' => 'jeroen.jpg',
         ]);
     }
 }

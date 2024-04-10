@@ -11,7 +11,7 @@ class CardController extends Controller
     public function create(Request $request)
     {
         $user = User::find($request->get('student'));
-        $lessons = match($request->get('card')) {
+        $lessons = match ($request->get('card')) {
             'A' => 5,
             'B' => 10,
             'C' => 20
@@ -19,7 +19,7 @@ class CardController extends Controller
 
         $user->stripcards()->create([
             'remaining_lessons' => $lessons,
-            'level' => $request->get('card')
+            'level' => $request->get('card'),
         ]);
 
         return redirect('/dashboard/strippenkaarten');
@@ -28,6 +28,7 @@ class CardController extends Controller
     public function delete(Request $request, int $id)
     {
         Stripcard::findOrFail($id)->delete();
+
         return redirect('/dashboard/strippenkaarten');
     }
 }

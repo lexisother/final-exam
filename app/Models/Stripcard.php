@@ -10,7 +10,7 @@ class Stripcard extends Model
 {
     use HasFactory;
 
-    protected $table = "strip_cards";
+    protected $table = 'strip_cards';
 
     /**
      * The attributes that are mass assignable.
@@ -19,10 +19,11 @@ class Stripcard extends Model
      */
     protected $fillable = [
         'remaining_lessons',
-        'level'
+        'level',
     ];
 
-    public function user(): BelongsTo {
+    public function user(): BelongsTo
+    {
         return $this->belongsTo(User::class);
     }
 }

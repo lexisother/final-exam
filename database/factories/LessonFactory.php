@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use DateInterval;
-use DateTime;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,7 +24,7 @@ class LessonFactory extends Factory
             'start_time' => $startTime->format('H:i'),
             'end_time' => $endTime->format('H:i'),
             'notes' => fake()->text(),
-            'date' => $startTime->format('Y-m-d')
+            'date' => $startTime->format('Y-m-d'),
         ];
     }
 }

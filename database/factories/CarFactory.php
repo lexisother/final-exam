@@ -20,7 +20,7 @@ class CarFactory extends Factory
             'name' => fake()->vehicle,
             'image' => '',
             'times_used' => mt_rand(0, 10),
-            'archived' => false
+            'archived' => false,
         ];
     }
 }

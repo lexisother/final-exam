@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Car;
 use App\Models\Lesson;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
@@ -22,7 +21,7 @@ class LessonSeeder extends Seeder
                 ]
             ))
             ->create([
-                'student_info_id' => 3
+                'student_info_id' => 3,
             ]);
     }
 }

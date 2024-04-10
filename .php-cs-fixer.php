@@ -16,7 +16,9 @@ $rules = [
     ],
     'single_space_around_construct' => true,
     'control_structure_braces' => true,
-    'braces_position' => true,
+    'braces_position' => [
+        'anonymous_classes_opening_brace' => 'next_line_unless_newline_at_signature_end',
+    ],
     'control_structure_continuation_position' => true,
     'declare_parentheses' => true,
     'statement_indentation' => true,

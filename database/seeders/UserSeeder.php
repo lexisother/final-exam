@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
             'name' => 'Giovanni',
             'email' => 'giovanni@downtheroad.nl',
             'password' => 'testtest',
-            'role' => 'Eigenaar'
+            'role' => 'Eigenaar',
         ]);
 
         User::factory()->create([
